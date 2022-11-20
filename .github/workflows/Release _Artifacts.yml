@@ -41,7 +41,7 @@ jobs:
               --access-token "${{ secrets.GITHUB_TOKEN }}" \
              --aqua-key "${{ secrets.AQUA_KEY }}" \
              --aqua-secret "${{ secrets.AQUA_SECRET }}" \
-             --artifact-path "fsaquasecorg1/graphql-vuln:${{ github.sha }}"
+             --artifact-path "aquakorea/vulenerable-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
           export BILLY_SERVER=https://billy.codesec.aquasec.com
