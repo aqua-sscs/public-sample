@@ -32,7 +32,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: "fsaquasecorg1/graphql-vuln:${{ github.sha }}"
+          tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
           export BILLY_SERVER=https://billy.codesec.aquasec.com
@@ -51,6 +51,6 @@ jobs:
             --artifact-path "my-image-name:${{ env.tag-version }}" 
 
             # The docker image name:tag of the newly built image
-            # --artifact-path "my-image-name:${{ env.tag-version }}" 
+            # --artifact-path "aquakorea/vulenerable-demo:${{ env.tag-version }}" 
             # OR the path to the root folder of your project. I.e my-repo/my-app 
             # --artifact-path "${{env.MY_APP_ROOT}}"
