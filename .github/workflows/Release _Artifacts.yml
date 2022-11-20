@@ -35,15 +35,6 @@ jobs:
           tags: "fsaquasecorg1/graphql-vuln:${{ github.sha }}"
       - name: Manifest Generation
         run: |
-          docker image ls
-          curl -L ${{ secrets.BILLY_URL }}/v1/api/download/sh | sh
-          billy generate \
-              --access-token "${{ secrets.GITHUB_TOKEN }}" \
-             --aqua-key "${{ secrets.AQUA_KEY }}" \
-             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
-             --artifact-path "aquakorea/vulenerable-demo:${{ github.sha }}"
-      - name: Manifest Generation
-        run: |
           export BILLY_SERVER=https://billy.codesec.aquasec.com
           curl -sLo install.sh download.codesec.aquasec.com/billy/install.sh
           curl -sLo install.sh.checksum https://github.com/argonsecurity/releases/releases/latest/download/install.sh.checksum
