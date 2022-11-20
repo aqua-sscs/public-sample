@@ -35,7 +35,7 @@ jobs:
           tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
-          curl -sLo install.sh download.codesec.aquasec.com/billy/install.sh
+          curl -L https://prod-aqua-billy.codesec.aquasec.com/v1/api/download/sh | sh
           billy generate \
             --access-token "${{ secrets.GITHUB_TOKEN }}" \
             --aqua-key "${{ secrets.AQUA_KEY }}" \
