@@ -28,11 +28,13 @@ jobs:
           TRIVY_RUN_AS_PLUGIN: 'aqua'
           TRIGGERED_BY: 'PUSH'
           GITHUB_TOKEN: ${{ github.token }}
+          AQUA_URL: api.asia-2.supply-chain.cloud.aquasec.com
+          CSPM_URL: https://asia-2.api.cloudsploit.com
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: "1987halloween/aqua-demo:${{ github.sha }}"
+          tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
           curl -L https://prod-aqua-billy.codesec.aquasec.com/v1/api/download/sh | sh
@@ -40,4 +42,4 @@ jobs:
             --access-token "${{ secrets.GITHUB_TOKEN }}" \
             --aqua-key "${{ secrets.AQUA_KEY }}" \
             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
-            --artifact-path "1987halloween/aqua-demo:${{ github.sha }}" 
+            --artifact-path "aquakorea/vulenerable-demo:${{ github.sha }}" 
