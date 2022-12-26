@@ -32,7 +32,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
+          tags: "1987halloween/aqua-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
           curl -L https://prod-aqua-billy.codesec.aquasec.com/v1/api/download/sh | sh 
@@ -40,4 +40,4 @@ jobs:
             --access-token "${{ secrets.GITHUB_TOKEN }}" \
             --aqua-key "${{ secrets.AQUA_KEY }}" \
             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
-            --artifact-path "aquakorea/vulenerable-demo:${{ github.sha }}" 
+            --artifact-path "1987halloween/aqua-demo:${{ github.sha }}" 
