@@ -28,8 +28,6 @@ jobs:
           TRIVY_RUN_AS_PLUGIN: 'aqua'
           TRIGGERED_BY: 'PUSH'
           GITHUB_TOKEN: ${{ github.token }}
-          AQUA_URL: api.asia-2.supply-chain.cloud.aquasec.com
-          CSPM_URL: https://asia-2.api.cloudsploit.com
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
