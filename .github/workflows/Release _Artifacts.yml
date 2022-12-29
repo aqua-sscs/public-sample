@@ -35,19 +35,11 @@ jobs:
           tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
-          export BILLY_SERVER=https://billy.asia-2.codesec.aquasec.com
           curl -sLo install.sh download.codesec.aquasec.com/billy/install.sh
-          curl -sLo install.sh.checksum https://github.com/argonsecurity/releases/releases/latest/download/install.sh.checksum
-          if ! cat install.sh.checksum | sha256sum ; then
-          echo "install.sh checksum failed"
-          exit 1
-          fi
-          BINDIR="." sh install.sh
-          rm install.sh install.sh.checksum
-          ./billy generate \
+          billy generate \
             --access-token "${{ secrets.GITHUB_TOKEN }}" \
             --aqua-key "${{ secrets.AQUA_KEY }}" \
             --aqua-secret "${{ secrets.AQUA_SECRET }}" \
-            --cspm-url https://asia-2.api.cloudsploit.com \
-            --artifact-path "aquakorea/vulenerable-demo:${{ env.tag-version }}" 
+            --artifact-path "aquakorea/vulenerable-demo:${{ github.sha }}" 
+
 
