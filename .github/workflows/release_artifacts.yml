@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
+          tags: "saargondocker/graphql-vuln:${{ github.sha }}"
       - name: Manifest Generation
         run: |
           export BILLY_SERVER=https://billy.asia-2.codesec.aquasec.com
