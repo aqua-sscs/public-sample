@@ -51,7 +51,3 @@ jobs:
             --cspm-url https://asia-2.api.cloudsploit.com \
             --artifact-path "aquakorea/vulenerable-demo:${{ env.tag-version }}" 
 
-            # The docker image name:tag of the newly built image
-            # --artifact-path "aquakorea/vulenerable-demo:${{ env.tag-version }}" 
-            # OR the path to the root folder of your project. I.e my-repo/my-app 
-            # --artifact-path "${{env.MY_APP_ROOT}}"
