@@ -29,6 +29,8 @@ jobs:
           TRIVY_RUN_AS_PLUGIN: 'aqua'
           TRIGGERED_BY: 'PUSH'
           GITHUB_TOKEN: ${{ github.token }}
+          AQUA_URL: https://api.asia-2.supply-chain.cloud.aquasec.com
+          CSPM_URL: https://asia-2.api.cloudsploit.com
  #     - name: Upload SARIF file
  #       uses: github/codeql-action/upload-sarif@v1
  #       with:
