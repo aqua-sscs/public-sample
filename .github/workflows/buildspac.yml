@@ -28,4 +28,4 @@ phases:
 artifacts:
   type: "image"
   files:
-    - "$DOCKER_REGISTRY/$IMAGE_TAG"
+    - "$DOCKER_REGISTRY/$IMAGE_TAG" 
