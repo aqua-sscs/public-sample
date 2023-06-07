@@ -20,7 +20,11 @@ jobs:
     
       - name: Checkout code
         uses: actions/checkout@v2
-          
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}          
       - name: Aqua code scanning(SCA,IaC and SAST) 
         uses: docker://aquasec/aqua-scanner
         with:
