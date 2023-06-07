@@ -39,7 +39,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: true 
+          push: true
           tags: "aquakorea/vulenerable-demo:${{ github.sha }}"
       - name: Manifest Generation
         run: |
