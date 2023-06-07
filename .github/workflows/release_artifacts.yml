@@ -8,7 +8,7 @@ on:
 jobs:
   checkout:
     name: Checkout
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }} 
       - name: Run Trivy vulnerability scanner - FS mode
         uses: aquasecurity/trivy-action@master
         with:
@@ -62,5 +62,5 @@ jobs:
             # The docker image name:tag of the newly built image
             # --artifact-path "aquakorea/vulenerable-demo:${{ env.tag-version }}" 
             # OR the path to the root folder of your project. I.e my-repo/my-app 
-            # --artifact-path "${{env.MY_APP_ROOT}}"
+            # --artifact-path "${{env.MY_APP_ROOT}}" 
           
