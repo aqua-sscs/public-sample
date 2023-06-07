@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    AQUA_KEY: "JVRC9NlRzMCdddbNA43hY"
-    AQUA_SECRET: "zzCcp9UzRoh0Hk8ttxnddjTwwfDnev9I1H"
+    AQUA_KEY: "HUhAs50j7A6VI6CkSojYwR"
+    AQUA_SECRET: "EkMeRiVwCAOkZ3iUv6EbAyaaKoIG8fNdxEV"
     TRIVY_RUN_AS_PLUGIN: "aqua"
     trivyVersion: "0.35.0"
     #DOCKER_REGISTRY: "000000000000.dkr.ecr.us-west-2.amazonaws.com"
